@@ -4,22 +4,20 @@ on:
   push:
     branches: 
       - main
-  issues:
-    types: [opened, reopened]
     
-  schedule:
-    - cron: '11 11 * * 5'
+ 
     
   workflow_dispatch:
-    inputs: 
-      homedrive:
-        description: Add home drive
-        required: true
-        default: home
     
 jobs:
   job1:
+    name: job 1
     runs-on: ubuntu-latest
     
     steps:
       - run: echo "Hello NDC porto"
+      - name: Execute hello world
+        run: |
+          import platform
+          print {platform.platform()}
+        shell: python
