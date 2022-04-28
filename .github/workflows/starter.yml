@@ -21,3 +21,6 @@ jobs:
           import platform
           print {platform.platform()}
         shell: python
+        
+      - name: Checkout
+        uses: actions/checkout@v3.0.2
